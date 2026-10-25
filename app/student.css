@@ -1,0 +1,26 @@
+* { box-sizing: border-box; }
+.student-shell { background: #edf1ef; }
+.student-topbar { align-items: center; }
+.student-main { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 36px 0; }
+.student-profile { margin-bottom: 18px; }
+.student-eyebrow, .join-panel h3 { color: var(--green); font-size: 10px; font-weight: 800; letter-spacing: .12em; }
+.student-profile h1 { margin: 4px 0; color: #27332f; font-family: "Manrope", sans-serif; }
+.student-profile p:last-child { margin: 0; color: #68756f; }
+.student-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.student-panel { min-width: 0; padding: 22px; border-radius: 8px; background: #fff; box-shadow: 0 8px 24px rgba(35, 46, 42, .08); }
+.student-panel h2 { margin: 5px 0 18px; font-family: "Manrope", sans-serif; }
+.qr-panel { text-align: center; }
+.qr-frame { display: grid; width: 300px; max-width: 100%; aspect-ratio: 1; margin: 0 auto; place-items: center; border: 1px solid #d9dfdc; background: #fff; }
+#student-qr { width: 280px; max-width: calc(100% - 20px); height: auto; }
+.qr-value { margin: 12px 0; color: #6a756f; font-family: monospace; font-size: 11px; overflow-wrap: anywhere; }
+.student-action { min-height: 42px; padding: 0 18px; border: 0; border-radius: 5px; background: var(--green); color: #fff; font-weight: 700; }
+.join-panel form { display: grid; gap: 8px; }
+.join-panel form label { color: #46564f; font-size: 10px; font-weight: 800; }
+.join-panel form input { min-height: 42px; padding: 0 11px; border: 1px solid #ccd5d1; border-radius: 5px; text-transform: uppercase; }
+.student-status { min-height: 20px; color: var(--green); font-size: 11px; }
+.student-status[data-state="error"] { color: var(--maroon); }
+.student-section-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.student-section-list li { padding: 12px; border: 1px solid #dae1dd; border-radius: 5px; }
+.student-section-list strong { display: block; color: #29372f; }
+.student-section-list span { color: #748179; font-size: 11px; }
+@media (max-width: 760px) { .student-grid { grid-template-columns: 1fr; } .student-main { width: min(100% - 24px, 600px); padding-top: 24px; } }

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#401613" />
+    <meta
+      name="description"
+      content="EAPIHS school portal sign in and account registration."
+    />
+    <title>EAPIHS Portal | Sign in</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="school-brand" href="#main" aria-label="EAPIHS Portal home">
+          <span class="school-seal" aria-hidden="true">EAPIHS</span>
+          <span class="school-copy">
+            <strong>Emilia Ambalada Poblete Integrated Highschool</strong>
+            <span>School Management &amp; Grading System</span>
+          </span>
+        </a>
+        <span class="portal-label"><span class="status-dot"></span> School Portal</span>
+      </header>
+
+      <main id="main" class="main-content">
+        <section class="auth-card" aria-labelledby="portal-title">
+          <div class="card-heading">
+            <span class="card-version">PORTAL ACCESS</span>
+            <div class="large-seal" aria-hidden="true">EAPIHS</div>
+            <p class="eyebrow">EMILIA AMBALADA POBLETE</p>
+            <h1 id="portal-title">EAPIHS Portal</h1>
+            <p class="school-full-name">Integrated Highschool</p>
+          </div>
+
+          <div class="card-body">
+            <div class="notice" role="note">
+              <span class="notice-mark" aria-hidden="true">i</span>
+              <p><strong>Welcome.</strong> Sign in to continue to your school account.</p>
+            </div>
+
+            <form id="auth-form" novalidate>
+              <div class="field-group" id="name-field" hidden>
+                <label for="full-name">FULL NAME (SURNAME FIRST)</label>
+                <input id="full-name" name="name" type="text" autocomplete="name" aria-describedby="full-name-hint" placeholder="Surname, First, Middle Name" />
+                <span class="field-hint" id="full-name-hint">Ilagay muna ang apelyido, kasunod ang first name at middle name. Halimbawa: Dela Cruz, Juan Miguel Santos.</span>
+              </div>
+
+              <div class="field-group" id="lrn-field" hidden>
+                <label for="lrn">LEARNER REFERENCE NUMBER (LRN)</label>
+                <input id="lrn" name="lrn" type="text" inputmode="numeric" pattern="[0-9]{12}" maxlength="12" aria-describedby="lrn-hint" placeholder="12-digit LRN" />
+                <span class="field-hint" id="lrn-hint">Enter the 12-digit LRN of the student. It will be used to create the QR code.</span>
+              </div>
+
+              <div class="field-group">
+                <label for="email">EMAIL ADDRESS</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="teacher@eapihs.edu.ph"
+                  required
+                />
+              </div>
+
+              <div class="field-group" id="role-field" hidden>
+                <label for="role">ACCOUNT TYPE</label>
+                <select id="role" name="role">
+                  <option value="teacher">Teacher</option>
+                  <option value="student">Student</option>
+                </select>
+              </div>
+
+              <div class="field-group">
+                <label for="password" id="password-label">SECURE PIN / PASSWORD</label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autocomplete="current-password"
+                  placeholder="Enter your password"
+                  required
+                />
+              </div>
+
+              <button class="primary-button" id="submit-button" type="submit">
+                <span class="button-arrow" aria-hidden="true">&#10140;</span>
+                <span id="submit-label">Secure Login</span>
+              </button>
+            </form>
+
+            <div class="demo-divider"><span>QUICK DEMO ACCESS</span></div>
+            <div class="demo-actions">
+              <button class="demo-button teacher-button" type="button" data-demo="teacher">
+                <span aria-hidden="true">T</span> Demo Teacher
+              </button>
+              <button class="demo-button student-button" type="button" data-demo="student">
+                <span aria-hidden="true">S</span> Demo Student
+              </button>
+            </div>
+
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+
+            <div class="mode-switch">
+              <span id="mode-prompt">Don't have an account yet?</span>
+              <button id="mode-toggle" class="text-button" type="button">Sign up</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>&copy; 2026 Emilia Ambalada Poblete Integrated Highschool</span>
+        <span class="footer-accent">Learning with purpose. Growing together.</span>
+      </footer>
+    </div>
+  </body>
+</html>

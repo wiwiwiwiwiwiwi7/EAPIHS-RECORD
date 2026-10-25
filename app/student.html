@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#401613" />
+    <title>Student Portal | EAPIHS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="student.css?v=1" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="student.js?v=1" defer></script>
+  </head>
+  <body>
+    <div class="page-shell student-shell">
+      <header class="topbar student-topbar">
+        <a class="school-brand" href="student.html" aria-label="EAPIHS Student Portal">
+          <span class="school-seal">EAPIHS</span>
+          <span class="school-copy">
+            <strong>Emilia Ambalada Poblete Integrated Highschool</strong>
+            <span>Student Portal</span>
+          </span>
+        </a>
+        <a class="signout-link" href="index.html">Sign out</a>
+      </header>
+
+      <main class="student-main">
+        <section class="student-profile" aria-labelledby="student-name">
+          <p class="student-eyebrow">STUDENT RECORD</p>
+          <h1 id="student-name">Student</h1>
+          <p>LRN: <strong id="student-lrn">—</strong></p>
+        </section>
+
+        <div class="student-grid">
+          <section class="student-panel qr-panel" aria-labelledby="qr-title">
+            <p class="student-eyebrow">MY QR CODE</p>
+            <h2 id="qr-title">Class identification</h2>
+            <div class="qr-frame">
+              <canvas id="student-qr" width="280" height="280" aria-label="Student LRN QR code"></canvas>
+            </div>
+            <p class="qr-value" id="student-qr-value"></p>
+            <button class="student-action" id="download-qr" type="button">Download QR</button>
+          </section>
+
+          <section class="student-panel join-panel" aria-labelledby="join-title">
+            <p class="student-eyebrow">JOIN A CLASS</p>
+            <h2 id="join-title">Enter Section ID</h2>
+            <form id="join-section-form">
+              <label for="section-id">SECTION ID</label>
+              <input id="section-id" type="text" maxlength="30" placeholder="SECTION-10A-ABC123" required />
+              <button class="student-action" type="submit">Join Section</button>
+            </form>
+            <p class="student-status" id="join-status" role="status" aria-live="polite"></p>
+            <h3>My Sections</h3>
+            <ul class="student-section-list" id="student-section-list"></ul>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
